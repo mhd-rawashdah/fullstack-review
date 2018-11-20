@@ -9,19 +9,14 @@ let repoSchema = mongoose.Schema({
 	let Repo = mongoose.model('Repo', repoSchema);
 
 	  	let save = (data) => {
-	  		// TODO: Your code here
-	  		// This function should save a repo or repos to
-	  		// the MongoDB
 	  		console.log(data.username)
-
 	  		console.log("db")
-
 	  		// console.log(data)
 	  		let repos = new Repo(data);
 	  		
 	 	 	repos.save(function(err){
 	  			if (err) {
-	     			console.log("error")
+	     			console.log("error", err)
 	  	  			return handleError(err)
 	    		}
 	  			console.log('Saved!')
